@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../assets/logobiosalim.png'
+import logo from '../assets/logo.png'
 
 type Page = 'home' | 'about' | 'products' | 'contact'
 
@@ -16,9 +16,8 @@ const Navbar: React.FC<NavbarProps> = ({ currentPage, setCurrentPage }) => {
   <img
     src={logo}
     alt="Biosalim Logo"
-    className="h-10 w-auto object-contain"
+    className="h-8 w-auto object-contain"
   />
-  <h2 className="text-xl font-semibold text-green-800">Biosalim</h2>
 </div>
 
         <div className="navbar-links space-x-4">

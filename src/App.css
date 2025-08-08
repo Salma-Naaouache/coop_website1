@@ -749,4 +749,19 @@ body {
     flex-direction: column;
     align-items: center;
   }
+  .home-page {
+  max-width: 1200px;       /* Limits max width */
+  margin-left: auto;       /* Center horizontally */
+  margin-right: auto;      /* Center horizontally */
+  padding-left: 15px;      /* Horizontal padding */
+  padding-right: 15px;     /* Horizontal padding */
+  box-sizing: border-box;  /* Ensure padding included in width */
+}
+.mission-item {
+  transition: transform 0.3s ease;
+}
+
+.mission-item:hover {
+  transform: translateY(-5px);
+}
 }
