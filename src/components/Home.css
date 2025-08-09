@@ -1,46 +1,205 @@
-/* Home Page Styles */
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Hero Section */
 .hero-section {
   position: relative;
-  overflow: hidden;
+  min-height: 100vh;
+  max-height: 400px;
+  width: 100%;
+  background: url('../assets/chefchaouen.jpg') no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
-.hero-section::before {
-  content: '';
+/* Blue Overlay */
+.blue-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(107, 142, 35, 0.7) 0%, rgba(107, 142, 35, 0.3) 100%);
+  background: rgba(43, 73, 55, 0.25); /* Bleu ciel with 25% opacity */
   z-index: 1;
 }
 
-.product-card {
-  transition: all 0.3s ease;
-  border-radius: 8px;
-  overflow: hidden;
+/* Content Container */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  padding: 2rem;
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+/* Main Title */
+.main-title h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 4.5rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.5rem;
+  line-height: 1;
 }
 
-.product-image {
-  transition: transform 0.3s ease;
+.tagline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 500;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  margin-top: 0;
 }
 
-.product-card:hover .product-image {
-  transform: scale(1.05);
+/* Quote Design */
+.quote-design {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 2rem;
 }
 
-/* Ensure Montserrat and Open Sans fonts are loaded */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap');
-
-body {
-  font-family: 'Open Sans', sans-serif;
+.quote-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 1.6;
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  position: relative;
+  padding: 1.5rem 0;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.quote-text::before,
+.quote-text::after {
+  content: '';
+  position: absolute;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.quote-text::before {
+  top: 0;
+}
+
+.quote-text::after {
+  bottom: 0;
+}
+
+/* Buttons */
+.buttons-container {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.hero-btn {
   font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0.75rem 2rem;
+  border-radius: 0;
+  border-width: 2px;
+  min-width: 250px;
+  transition: all 0.3s ease;
+  color: white;
+  border-color: white;
+  background-color: transparent;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Active state for buttons */
+.hero-btn:active {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .main-title h1 {
+    font-size: 3.5rem;
+  }
+  .tagline {
+    font-size: 1.75rem;
+  }
+  .quote-text {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-title h1 {
+    font-size: 2.8rem;
+  }
+  .tagline {
+    font-size: 1.5rem;
+  }
+  .quote-text {
+    font-size: 1.25rem;
+    padding: 1rem 0;
+  }
+  .buttons-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-btn {
+    width: 100%;
+    max-width: 280px;
+  }
+  .quote-text::before,
+  .quote-text::after {
+    left: 10%;
+    right: 10%;
+  }
+}
+
+@media (max-width: 576px) {
+  .main-title h1 {
+    font-size: 2.2rem;
+  }
+  .tagline {
+    font-size: 1.2rem;
+  }
+  .quote-text {
+    font-size: 1.1rem;
+  }
+  @keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Animation keyframes */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animation class */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
 }
